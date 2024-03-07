@@ -1,0 +1,184 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+}
+
+/* ABBR DECORATION */
+abbr {
+	text-decoration: none;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
+}
+
+/* Make images easier to work with */
+svg,
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+:root {
+	/*--COLORS--*/
+	--White: hsl(0, 0%, 100%);
+	--Light-pink: hsl(275, 100%, 97%);
+	--Grayish-purple: hsl(292, 16%, 49%);
+	--Dark-purple: hsl(292, 42%, 14%);
+
+	/*--Font-Weight--*/
+	--medium-fw: 500;
+	--bold-fw: 700;
+
+	/*--Font-Size--*/
+	--fs-08: 0.8rem;
+	--fs-1: 1rem;
+	--fs-125: 1.25rem;
+	--fs-15: 1.5rem;
+	--fs-175: 1.75rem;
+	--fs-2: 2rem;
+	--fs-225: 2.25rem;
+	--fs-25: 2.5rem;
+	--fs-275: 2.75rem;
+	--fs-300: 3rem;
+}
+
+body {
+	background-color: var(--Light-pink);
+	font-family: 'Work Sans', sans-serif;
+	margin-inline: auto;
+	text-align: left;
+}
+
+.cropped-bg {
+	background-image: url(assets/images/background-pattern-desktop.svg);
+	min-height: 250px;
+	z-index: -1;
+}
+
+.wrapper {
+	background-color: var(--White);
+	display: flex;
+	flex-direction: column;
+	align-items: ;
+	justify-content: center;
+
+	max-width: 550px;
+	margin-block: -125px;
+	margin-inline: auto;
+	padding: 2rem;
+	border-radius: 10px;
+	z-index: 2;
+}
+
+.row {
+	display: flex;
+	align-items: center;
+}
+
+.faqs-body {
+	padding-block: 2rem;
+}
+.q-div {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	font-weight: var(--bold-fw);
+	padding-block: 0.725rem;
+	color: var(--Dark-purple);
+}
+.q-div:hover {
+	color: purple;
+	cursor: pointer;
+}
+
+h1 {
+	font-size: var(--fs-25);
+	margin-left: 0.725rem;
+	color: var(--Dark-purple);
+}
+p {
+	margin-bottom: 1rem;
+	color: var(--Grayish-purple);
+}
+
+button {
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+.hide-btn {
+	display: none;
+}
+p {
+	display: none;
+}
+
+@media (max-width: 500px) {
+	.cropped-bg {
+		background-image: url(assets/images/background-pattern-mobile.svg);
+	}
+	.wrapper {
+		margin-inline: 1rem;
+	}
+	h1 {
+		font-size: var(--fs-175);
+	}
+	.star-icon {
+		max-width: 10%;
+	}
+}
