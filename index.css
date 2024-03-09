@@ -161,6 +161,9 @@ button {
 	background: none;
 	cursor: pointer;
 }
+.show-btn {
+	display: block;
+}
 .hide-btn {
 	display: none;
 }
