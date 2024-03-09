@@ -170,6 +170,9 @@ button {
 p {
 	display: none;
 }
+.hidden {
+	display: none;
+}
 
 @media (max-width: 500px) {
 	.cropped-bg {
