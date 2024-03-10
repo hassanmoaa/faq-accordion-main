@@ -1,15 +1,29 @@
-const showBtnEl = document.querySelectorAll('#showBtn');
-const hideBtnEl = document.querySelectorAll('#hideBtn');
+const showBtnEl = document.querySelectorAll('.show-btn');
+const hideBtnEl = document.querySelectorAll('.hide-btn');
 const paragraphEl = document.querySelectorAll('p');
 
-showBtnEl.addEventListener('click', () => {
-	paragraphEl.style.display =
-		paragraphEl.style.display === 'none' ? 'block' : 'none';
+showBtnEl.forEach((button) => {
+	button.addEventListener('click', () => {
+		const paragraphEl = document.getElementById(
+			`${button.dataset.paragraphRefference}`
+		);
+		paragraphEl.style.display = 'block';
+
+		button.style.display = 'none';
+		hideBtnEl.style.display = 'block';
+	});
 });
 
-hideBtnEl.addEventListener('click', () => {
-	paragraphEl.style.display =
-		paragraphEl.style.display === 'block' ? 'none' : 'block';
+hideBtnEl.forEach((button) => {
+	button.addEventListener('click', () => {
+		const paragraphEl = document.getElementById(
+			button.dataset.paragraphRefference
+		);
+		paragraphEl.style.display = 'none';
+
+		showBtnEl.style.display = 'block';
+		button.style.display = 'none';
+	});
 });
 
 // function toggleDisclosure() {
