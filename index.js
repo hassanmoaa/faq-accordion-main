@@ -1,5 +1,5 @@
-const showBtnEl = document.querySelectorAll('.show-btn');
-const hideBtnEl = document.querySelectorAll('.hide-btn');
+const showBtnEl = document.querySelectorAll('#showBtn');
+const hideBtnEl = document.querySelectorAll('#hideBtn');
 const paragraphEl = document.querySelectorAll('p');
 
 showBtnEl.forEach((button) => {
@@ -7,10 +7,10 @@ showBtnEl.forEach((button) => {
 		const paragraphEl = document.getElementById(
 			`${button.dataset.paragraphRefference}`
 		);
+		const hideButton = button.parentElement.querySelector('.hide-btn');
 		paragraphEl.style.display = 'block';
-
 		button.style.display = 'none';
-		hideBtnEl.style.display = 'block';
+		hideButton.style.display = 'block';
 	});
 });
 
@@ -19,14 +19,9 @@ hideBtnEl.forEach((button) => {
 		const paragraphEl = document.getElementById(
 			button.dataset.paragraphRefference
 		);
+		const showButton = button.parentElement.querySelector('.show-btn');
 		paragraphEl.style.display = 'none';
-
-		showBtnEl.style.display = 'block';
 		button.style.display = 'none';
+		showButton.style.display = 'block';
 	});
 });
-
-// function toggleDisclosure() {
-//     const isExpanded = this.getAttribute('aria-expanded') === 'true';
-//     this.setAttribute('aria-expanded', !isExpanded);
-//   }
